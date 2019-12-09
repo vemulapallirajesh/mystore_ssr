@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node dist/server",
-    "build": "ng build",
+    "build": "npm run build:client-and-server-bundles && npm run compile:server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run mystore:server",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --prod && ng run mystore:server"
   },
   "engines": {
     "node": "10.16.2",
